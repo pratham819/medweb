@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Next.js build outputs
+.next/
+*/.next/
+out/
+build/
+dist/
+
+# Environment and secrets
+.env
+.env*.local
+*.env
+!.env.example
+frontend/.env.local
+backend/.env
+
+# Large temporary scratch data
+frontend/public/countries.geojson
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
