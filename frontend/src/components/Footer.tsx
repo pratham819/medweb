@@ -19,20 +19,18 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col gap-20">
         {/* Brand Badge */}
         <div className="flex items-center gap-3">
-          <img
-            src="https://i0.wp.com/synergiasciences.com/wp-content/uploads/2023/03/Synergia-Sciences-Symbol.png?fit=32%2C32&ssl=1"
-            alt="Synergia Sciences"
-            className="w-8 h-8"
-          />
-          <span className="text-xs uppercase tracking-widest text-[#03A9F4]/70 font-semibold">
-            Building Sustainable Partnerships
-          </span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 w-fit">
+            <span className="w-2 h-2 rounded-full bg-[#03A9F4] animate-pulse" />
+            <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#03A9F4]">
+              GET IN TOUCH
+            </span>
+          </div>
         </div>
 
         {/* Big CTA */}
         <div className="flex flex-col gap-8 max-w-4xl">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-white leading-tight">
-            Let&apos;s build something together. <span className="text-white/40">Get in touch.</span>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight">
+            Let&apos;s Build a Sustainable Partnership Together. <span className="text-[#03A9F4]">Connect with our team.</span>
           </h2>
 
           <div className="flex flex-wrap items-center gap-4 pt-4">

@@ -48,10 +48,18 @@ export default function TestimonialSlider() {
     <section className="w-full bg-white py-24 px-6 sm:px-10 border-t border-[#085884]/10">
       <div className="max-w-7xl mx-auto flex flex-col gap-12">
         {/* Section Header */}
-        <div className="flex items-center justify-between">
-          <h2 className="text-xs uppercase tracking-widest text-[#788090] font-semibold">
-            Partner Testimonials
-          </h2>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="flex flex-col gap-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCF3FF] border border-[#085884]/20 w-fit">
+              <span className="w-2 h-2 rounded-full bg-[#03A9F4] animate-pulse" />
+              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#085884]">
+                CLIENT ENDORSEMENTS
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#17252A]">
+              Trusted by Global Chemical &amp; Pharma Leaders
+            </h2>
+          </div>
           <div className="flex items-center gap-3">
             <button
               onClick={handlePrev}

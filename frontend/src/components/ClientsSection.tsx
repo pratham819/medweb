@@ -68,15 +68,20 @@ export default function ClientsSection() {
 
       <div className="max-w-7xl mx-auto flex flex-col gap-16 relative z-10">
         {/* Section Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-[#085884]/15">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#03A9F4] animate-pulse" />
-            <h2 className="text-xs uppercase tracking-[0.25em] text-[#17252A] font-bold">
-              GLOBAL CUSTOMER REACH
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between pb-4 border-b border-[#085884]/15 gap-2">
+          <div className="flex flex-col gap-1.5">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCF3FF] border border-[#085884]/20 w-fit">
+              <span className="w-2 h-2 rounded-full bg-[#03A9F4] animate-pulse" />
+              <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#085884]">
+                GLOBAL MARKET PRESENCE
+              </span>
+            </div>
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#17252A]">
+              Worldwide Customer Footprint &amp; Export Reach
             </h2>
           </div>
-          <span className="text-xs text-[#788090] font-mono font-medium">
-            Trusted partners in international markets
+          <span className="text-xs text-[#788090] font-mono font-medium shrink-0">
+            Exporting across 40+ countries
           </span>
         </div>
 

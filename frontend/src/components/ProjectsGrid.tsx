@@ -273,21 +273,24 @@ export default function ProjectsGrid() {
       {/* Sticky viewport — pins the 3D scene to the screen */}
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
         {/* ── Section Header ── */}
-        <div className="absolute top-6 sm:top-8 left-0 right-0 px-5 sm:px-10 z-[300]">
+        <div className="absolute top-6 sm:top-8 left-0 right-0 px-6 sm:px-10 z-[300]">
           <div
-            className="max-w-7xl mx-auto flex items-end justify-between pb-4"
+            className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between pb-4 gap-2"
             style={{ borderBottom: `1px solid rgba(8, 88, 132, 0.15)` }}
           >
-            <div className="flex items-center gap-2.5">
-              <span className="w-2 h-2 rounded-full bg-[#03A9F4] animate-pulse" />
-              <h2
-                className="text-[11px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#17252A]"
-              >
-                Active Molecules (05)
+            <div className="flex flex-col gap-1.5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCF3FF] border border-[#085884]/20 w-fit">
+                <span className="w-2 h-2 rounded-full bg-[#03A9F4] animate-pulse" />
+                <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#085884]">
+                  ACTIVE INGREDIENTS PORTFOLIO
+                </span>
+              </div>
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#17252A]">
+                Key Molecular Chemistry (05 Active Molecules)
               </h2>
             </div>
-            <span className="text-[10px] sm:text-xs font-mono text-[#085884]/80 font-semibold">
-              Synergia Key Ingredients
+            <span className="text-xs font-mono text-[#085884]/80 font-semibold shrink-0">
+              Orbital Molecular View
             </span>
           </div>
         </div>
