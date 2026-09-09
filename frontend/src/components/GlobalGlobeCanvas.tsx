@@ -16,7 +16,7 @@ export default function GlobalGlobeCanvas() {
     // ─── Three.js Scene, Camera, Renderer ───
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
-    camera.position.z = 290;
+    camera.position.z = 250;
 
     const renderer = new THREE.WebGLRenderer({
       antialias: true,
@@ -33,13 +33,14 @@ export default function GlobalGlobeCanvas() {
     // ─── Globe Group & Orientation ───
     const globeGroup = new THREE.Group();
     // Natural axial tilt (~18 degrees)
-    globeGroup.rotation.x = 0.32;
+    globeGroup.rotation.x = 0.30;
     globeGroup.rotation.z = -0.08;
     scene.add(globeGroup);
 
-    const GLOBE_RADIUS = 92;
+    // Scaled-up prominent globe radius
+    const GLOBE_RADIUS = 100;
 
-    // ─── Realistic Geographic Textured Earth Sphere ───
+    // ─── Realistic Geographic Textured Earth Sphere (StratExecute Theme) ───
     const textureLoader = new THREE.TextureLoader();
     const earthTexture = textureLoader.load('/earth-clean.png', (tex) => {
       tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
@@ -52,33 +53,22 @@ export default function GlobalGlobeCanvas() {
     const earthGeo = new THREE.SphereGeometry(GLOBE_RADIUS, 64, 64);
     const earthMat = new THREE.MeshStandardMaterial({
       map: earthTexture,
-      roughness: 0.85,
-      metalness: 0.05,
+      roughness: 0.65,
+      metalness: 0.02,
     });
     const earthMesh = new THREE.Mesh(earthGeo, earthMat);
     globeGroup.add(earthMesh);
 
-    // ─── Subtle Atmosphere Rim Shading ───
-    const haloGeo = new THREE.SphereGeometry(GLOBE_RADIUS + 1.2, 64, 64);
-    const haloMat = new THREE.MeshBasicMaterial({
-      color: 0x085884,
-      transparent: true,
-      opacity: 0.06,
-      side: THREE.BackSide,
-    });
-    const haloMesh = new THREE.Mesh(haloGeo, haloMat);
-    globeGroup.add(haloMesh);
-
-    // ─── Lighting Setup ───
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.35);
+    // ─── Lighting Setup — Clean Bright Neutral Studio Illumination (No Blue) ───
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2.5);
     scene.add(ambientLight);
 
-    const sunLight = new THREE.DirectionalLight(0xffffff, 0.7);
-    sunLight.position.set(120, 80, 150);
+    const sunLight = new THREE.DirectionalLight(0xffffff, 1.25);
+    sunLight.position.set(130, 85, 160);
     scene.add(sunLight);
 
-    const fillLight = new THREE.DirectionalLight(0xdcf3ff, 0.4);
-    fillLight.position.set(-120, -40, -100);
+    const fillLight = new THREE.DirectionalLight(0xfffbf5, 0.6);
+    fillLight.position.set(-130, -40, -100);
     scene.add(fillLight);
 
     // ─── Resize Handler ───
@@ -110,8 +100,6 @@ export default function GlobalGlobeCanvas() {
       renderer.dispose();
       earthGeo.dispose();
       earthMat.dispose();
-      haloGeo.dispose();
-      haloMat.dispose();
       earthTexture.dispose();
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
@@ -128,25 +116,11 @@ export default function GlobalGlobeCanvas() {
       />
 
       {/* Top Floating Badge */}
-      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#085884]/15 shadow-sm pointer-events-none">
-        <span className="w-2 h-2 rounded-full bg-[#03A9F4] animate-pulse" />
-        <span className="text-[10px] sm:text-xs font-mono font-bold text-[#085884]">
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#E5E0D8] shadow-xs pointer-events-none">
+        <span className="w-2 h-2 rounded-full bg-[#FF7A1A] animate-pulse" />
+        <span className="text-[10px] sm:text-xs font-mono font-bold text-[#1B2632]">
           GLOBAL EXPORT NETWORK
         </span>
-      </div>
-
-      {/* Bottom Floating Region Badges */}
-      <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 z-20 flex items-center justify-between pointer-events-none">
-        <div className="flex flex-wrap gap-1.5 max-w-full">
-          {['North America', 'Europe', 'Latin America', 'Asia-Pacific', 'Middle East'].map((reg) => (
-            <span
-              key={reg}
-              className="text-[9px] sm:text-[10px] font-bold px-2.5 py-1 rounded-md bg-white/95 border border-[#085884]/15 text-[#17252A] shadow-xs backdrop-blur-sm"
-            >
-              {reg}
-            </span>
-          ))}
-        </div>
       </div>
     </div>
   );

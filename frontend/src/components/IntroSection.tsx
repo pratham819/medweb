@@ -2,32 +2,37 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe, Building2, FlaskConical, Award, CheckCircle2 } from 'lucide-react';
+import CountUp from './CountUp';
 
 const stats = [
   {
     id: '01',
-    value: '40+',
+    numericValue: 40,
+    suffix: '+',
     label: 'Global Export Markets',
     desc: 'Across 5 continents worldwide',
     icon: Globe,
   },
   {
     id: '02',
-    value: '100+',
+    numericValue: 100,
+    suffix: '+',
     label: 'Enterprise Clients & MNCs',
     desc: 'Trusted international partnerships',
     icon: Building2,
   },
   {
     id: '03',
-    value: '50,000+ MT',
+    numericValue: 50000,
+    suffix: '+ MT',
     label: 'Annual Synthesis Output',
     desc: 'High-scale industrial capacity',
     icon: FlaskConical,
   },
   {
     id: '04',
-    value: '25+ Years',
+    numericValue: 25,
+    suffix: '+ Years',
     label: 'Pharma Heritage',
     desc: 'Management expertise in APIs',
     icon: Award,
@@ -77,7 +82,7 @@ export default function IntroSection() {
 
                 <div>
                   <span className="text-3xl sm:text-4xl font-extrabold text-[#085884] font-mono block tracking-tight">
-                    {stat.value}
+                    <CountUp value={stat.numericValue} suffix={stat.suffix} duration={2.2} />
                   </span>
                   <h4 className="text-sm font-bold text-[#17252A] mt-1 tracking-tight">
                     {stat.label}
@@ -149,7 +154,7 @@ export default function IntroSection() {
                 href="#work"
                 className="inline-flex items-center gap-3 text-xs sm:text-sm font-bold uppercase tracking-wider text-white px-7 py-3.5 rounded-full bg-[#085884] hover:bg-[#064263] shadow-md hover:shadow-lg transition-all duration-300 group cursor-pointer"
               >
-                <span>Explore Active Molecules</span>
+                <span>Explore Our Products</span>
                 <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
               </a>
             </div>

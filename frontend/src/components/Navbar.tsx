@@ -6,7 +6,7 @@ interface NavbarProps {
 
 const navLinks = [
   { name: 'About Us', href: '#about' },
-  { name: 'Active Molecules', href: '#work' },
+  { name: 'Our Products', href: '#work' },
   { name: 'Global Reach', href: '#clients' },
   { name: 'Testimonials', href: '#testimonials' },
   { name: 'Insights', href: '#blog' },

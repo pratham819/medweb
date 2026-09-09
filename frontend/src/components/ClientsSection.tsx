@@ -2,54 +2,35 @@
 
 import { motion } from 'framer-motion';
 import GlobalGlobeCanvas from './GlobalGlobeCanvas';
+import CountUp from './CountUp';
 
 const reachPartners = [
   {
     id: '01',
-    title: 'Top 3 global',
-    subtitle: 'crop protection company',
+    title: 'Pest Control & Protection Giants',
+    subtitle: 'Global household & industrial formulators',
   },
   {
     id: '02',
-    title: 'Fortune 500',
-    subtitle: 'chemical manufacturer',
+    title: 'Top Generic Agrochemical MNCs',
+    subtitle: 'Crop & specialty chemical leaders',
   },
   {
     id: '03',
-    title: 'Leading global',
-    subtitle: 'agri-science company',
+    title: 'Institutional Disinfection & Public Health',
+    subtitle: 'Vector control & hygiene authorities',
   },
   {
     id: '04',
-    title: 'Major global',
-    subtitle: 'consumer health brand',
-  },
-  {
-    id: '05',
-    title: 'Top 10 global',
-    subtitle: 'household products company',
-  },
-  {
-    id: '06',
-    title: 'Leading multinational',
-    subtitle: 'personal care manufacturer',
-  },
-  {
-    id: '07',
-    title: 'Top 5 global',
-    subtitle: 'specialty chemicals group',
-  },
-  {
-    id: '08',
-    title: 'Global leader in',
-    subtitle: 'animal health products',
+    title: 'Specialty Veterinary & Pet Care',
+    subtitle: 'Consumer health & animal brands',
   },
 ];
 
 const globalStats = [
-  { value: '40+', label: 'Export Markets', desc: 'Across 5 continents' },
-  { value: '8+', label: 'MNC Categories', desc: 'Global leadership' },
-  { value: '100%', label: 'Regulatory Compliance', desc: 'International GMP' },
+  { numericValue: 40, suffix: '+', label: 'Export Markets', desc: 'Across 5 continents' },
+  { numericValue: 8, suffix: '+', label: 'MNC Categories', desc: 'Global leadership' },
+  { numericValue: 100, suffix: '%', label: 'Regulatory Compliance', desc: 'International GMP' },
 ];
 
 export default function ClientsSection() {
@@ -109,7 +90,7 @@ export default function ClientsSection() {
                   className="rounded-xl bg-white/90 border border-[#085884]/15 p-3.5 sm:p-4 text-center shadow-xs backdrop-blur-sm"
                 >
                   <span className="text-xl sm:text-2xl font-bold font-mono text-[#085884] block tracking-tight">
-                    {stat.value}
+                    <CountUp value={stat.numericValue} suffix={stat.suffix} duration={2} />
                   </span>
                   <span className="text-[11px] sm:text-xs font-bold text-[#17252A] block mt-0.5">
                     {stat.label}
@@ -123,12 +104,12 @@ export default function ClientsSection() {
           </div>
 
           {/* Right Column: 3D Interactive Rotating Globe (7 cols) */}
-          <div className="lg:col-span-7 h-[420px] sm:h-[520px] lg:h-[560px] w-full rounded-3xl bg-gradient-to-br from-white/95 via-[#F2FAFE]/90 to-[#E6F4FC]/80 border border-[#085884]/20 shadow-xl backdrop-blur-xl relative overflow-hidden flex items-center justify-center">
-            {/* Ambient inner sphere glow */}
+          <div className="lg:col-span-7 h-[420px] sm:h-[520px] lg:h-[560px] w-full rounded-3xl bg-gradient-to-br from-white via-[#FAF9F7]/90 to-[#F2EFEB]/80 border border-[#E5E0D8] shadow-xl backdrop-blur-xl relative overflow-hidden flex items-center justify-center">
+            {/* Ambient subtle warm inner glow */}
             <div
-              className="absolute w-[360px] h-[360px] rounded-full blur-[80px] opacity-35 pointer-events-none"
+              className="absolute w-[360px] h-[360px] rounded-full blur-[80px] opacity-25 pointer-events-none"
               style={{
-                background: 'radial-gradient(circle, rgba(3, 169, 244, 0.35), rgba(8, 88, 132, 0.20), transparent 70%)',
+                background: 'radial-gradient(circle, rgba(255, 140, 0, 0.15), rgba(229, 224, 216, 0.20), transparent 70%)',
               }}
             />
 
@@ -144,7 +125,7 @@ export default function ClientsSection() {
               Client & Partner Categories
             </h4>
             <span className="text-[11px] font-mono text-[#788090]">
-              8 Strategic Industry Segments
+              4 Strategic Global Segments
             </span>
           </div>
 

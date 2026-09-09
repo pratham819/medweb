@@ -105,7 +105,7 @@ export default function Hero() {
               href="#work"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-white text-[#085884] font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:bg-[#DCF3FF] hover:shadow-xl transition-all duration-300 group cursor-pointer"
             >
-              <span>Explore Molecules</span>
+              <span>Explore Our Products</span>
               <ArrowRight className="w-4 h-4 text-[#085884] group-hover:translate-x-1 transition-transform" />
             </a>
 

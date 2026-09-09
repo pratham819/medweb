@@ -282,15 +282,15 @@ export default function ProjectsGrid() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DCF3FF] border border-[#085884]/20 w-fit">
                 <span className="w-2 h-2 rounded-full bg-[#03A9F4] animate-pulse" />
                 <span className="text-[10px] sm:text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#085884]">
-                  ACTIVE INGREDIENTS PORTFOLIO
+                  OUR PRODUCTS
                 </span>
               </div>
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#17252A]">
-                Key Molecular Chemistry (05 Active Molecules)
+                Our Products
               </h2>
             </div>
             <span className="text-xs font-mono text-[#085884]/80 font-semibold shrink-0">
-              Orbital Molecular View
+              Interactive 3D View
             </span>
           </div>
         </div>
